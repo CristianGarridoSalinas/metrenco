@@ -9,19 +9,506 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+   }
+    </style>
+</head>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+<body>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div id="panorama"></div>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-  </body>
+    <script>
+        
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "frente-santuario",
+                "title": "Santuario de la Virgen del Tránsito de Metrenco",
+                "horizonRoll":0,
+                "sceneFadeDuration": 1000,
+                "compass": false
+            },
+
+            "scenes": {
+                "frente-santuario": {
+                    "title": "Frente",
+                    "hfov": 300,
+                    "pitch": 9,
+                    "yaw": 0,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/7.jpg",
+                    "autoRotate": 0,
+                    "autoLoad": true,
+                    "hotSpots": [
+                        {
+                          "pitch": -30,
+                            "yaw": 0,
+                            "type": "info",
+                            "text": "Candelero"  
+                        },
+                        {
+                            "pitch": -10,
+                            "yaw": -51,
+                            "type": "scene",
+                            "text": "Costado izquierdo",
+                            "sceneId": "costado-santuario-izq"
+                        },
+                        {
+                          "pitch": -10,
+                            "yaw": 51,
+                            "type": "scene",
+                            "text": "Costado Derecho",
+                            "sceneId": "costado-santuario-dch"  
+                        },
+                        {
+                             "pitch": -10,
+                            "yaw": 90,
+                            "type": "scene",
+                            "text": "Ermita",
+                            "sceneId": "ermita",
+                            "targetYaw":-20,
+                            "targetPitch":-5
+                        },
+                         {
+                            "pitch": -10,
+                            "yaw": 0,
+                            "type": "scene",
+                            "text": "Nártex",
+                            "sceneId": "nártex"
+                        },
+                    ]
+               },
+                
+                 "nártex": {
+                    "title": "Nártex",
+                    "hfov": 400,
+                    "yaw": 180,
+                    "pitch": 0,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/2.jpg",
+                    "hotSpots": [
+                        {
+                             "pitch": -23,
+                            "yaw": 0,
+                            "type": "info",
+                            "text": "Candelero"  
+                        },
+                        {
+                          "pitch": -12,
+                            "yaw": 178,
+                            "type": "info",
+                            "text": "Virgen del Tránsito"   
+                        },
+                        {
+                            "pitch": 5,
+                            "yaw": 0,
+                            "type": "scene",
+                            "text": "Frente",
+                            "sceneId": "frente-santuario",
+                            "targetYaw": 0,
+                            "targetPitch": 9
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": 110,
+                            "type": "scene",
+                            "text": "Interior",
+                            "sceneId": "nave-central",
+                            "targetYaw": 180,
+                            "targetPitch": 0
+                        },
+                        {
+                            "pitch": 0,
+                            "yaw": -110,
+                            "type": "scene",
+                            "text": "Interior",
+                            "sceneId": "nave-central",
+                            "targetYaw": 180,
+                            "targetPitch": 0
+                        }
+                        
+                    ]
+                },
+
+                "costado-santuario-izq": {
+                    "title": "Costado izquierdo",
+                    "hfov": 300,
+                    "yaw": 0,
+                    "pitch": 3,
+                    "type": "equirectangular",
+                    "horizonRoll":0,
+                    "panorama": "/images/metrenco/1.jpg",
+                    "hotSpots": [
+                        {
+                          "pitch": -9,
+                            "yaw": -100,
+                            "type": "info",
+                            "text": "Casa del Cuidador"    
+                        },
+                        {
+                          "pitch": -9,
+                            "yaw": -62,
+                            "type": "info",
+                            "text": "Casa Parroquial, Ex Consultorio"   
+                        },
+                        {
+                            "pitch": -5,
+                            "yaw": 35,
+                            "type": "scene",
+                            "text": "Frente",
+                            "sceneId": "frente-santuario",
+                            "targetYaw": 0,
+                            "targetPitch": 9
+                        },
+                        {
+                            "pitch": -5,
+                            "yaw": -43,
+                            "type": "scene",
+                            "text": "Contrafrente",
+                            "sceneId": "contrafrente",
+                            "targetYaw": 0,
+                            "targetPitch": -13
+                        },
+                         {
+                            "pitch": 15,
+                            "yaw": -80,
+                            "type": "scene",
+                            "text": "Campanario",
+                            "sceneId": "campanario",
+                            "targetYaw": 0,
+                            "targetPitch": 0
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": -2,
+                            "type": "scene",
+                            "text": "Interior",
+                            "sceneId": "nave-central",
+                            "targetYaw": 180,
+                            "targetPitch": 0
+                        }
+                    ]
+                },
+                
+                 "nave-central": {
+                    "title": "Nave central",
+                    "hfov": 300,
+                    "yaw": 180,
+                    "pitch": 0,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/25.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": 0,
+                            "yaw": 87,
+                            "type": "scene",
+                            "text": "Costado Izquierdo",
+                            "sceneId": "costado-santuario-izq",
+                            "targetYaw": 0,
+                            "targetPitch": 3
+                        },
+                        {
+                            "pitch": -3,
+                            "yaw": 0,
+                            "type": "scene",
+                            "text": "Base de la Torre",
+                            "sceneId": "base",
+                            "targetYaw": 0,
+                            "targetPitch": 0
+                        },
+                        {
+                           "pitch": -3,
+                            "yaw": -87,
+                            "type": "scene",
+                            "text": "Costado Derecho",
+                            "sceneId": "costado-santuario-dch",
+                            "targetYaw": 0,
+                            "targetPitch": 3
+                        
+                        },
+                        {
+                            "pitch": -3,
+                            "yaw": 180,
+                            "type": "scene",
+                            "text": "Ábside",
+                            "sceneId": "abside",
+                            "targetYaw": 0,
+                            "targetPitch": 0
+                        }
+                        
+                    ]
+                },
+                
+                 "campanario": {
+                    "title": "Campanario",
+                    "hfov": 300,
+                    "yaw": 0,
+                    "pitch": 0,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/3.jpg",
+                     "hotSpots":[
+                       {
+                         "pitch": -25,
+                         "yaw": 180,
+                         "type": "scene",
+                          "text": "Costado Izquierdo",
+                          "sceneId": "costado-santuario-izq",
+                          "targetyaw":0,
+                          "targetpitch":0
+                         },
+                      {
+                        "pitch": -15,
+                         "yaw": 60,
+                         "type": "scene",
+                          "text": "Contrafrente",
+                          "sceneId": "contrafrente",
+                          "targetyaw":0,
+                          "targetpitch":-13     
+                       }
+                         
+                    ]
+                 },
+                
+                "abside": {
+                    "title": "Interior",
+                    "hfov": 110,
+                    "pitch": 0,
+                    "yaw": 5,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/24.jpg",
+                    "hotSpots": [
+                        {
+                        "pitch": -30,
+                         "yaw": 0,
+                         "type": "scene",
+                          "text": "Nave Central",
+                          "sceneId": "nave-central",
+                          "targetyaw":180,
+                          "targetpitch":0    
+                        },
+                        {
+                          "pitch": -11,
+                         "yaw": 50,
+                         "type": "scene",
+                          "text": "Costado Izquierdo",
+                          "sceneId": "costado-santuario-izq",
+                          "targetyaw":0,
+                          "targetpitch":-13    
+                        },
+                        {
+                            "pitch": -11,
+                         "yaw": -50,
+                         "type": "scene",
+                          "text": "Costado Derecho",
+                          "sceneId": "costado-santuario-dch",
+                          "targetyaw":0,
+                          "targetpitch":-13    
+                        },
+                        {
+                         "pitch": -14,
+                         "yaw": 0,
+                         "type": "scene",
+                          "text": "Base de la Torre",
+                          "sceneId": "base",
+                          "targetyaw":0,
+                          "targetpitch":-13       
+                        },
+                        {
+                            "pitch": 20,
+                            "yaw": 0,
+                            "type": "info",
+                            "text": "Coro"
+                        },
+                        {
+                            "pitch": -15,
+                            "yaw": 180,
+                            "type": "info",
+                            "text": "Pintura de Giulio Di Girolamo, representando los misterios del rosario, esta fue realizada por el artista con anterioridad a la construcción del Santuario"
+                        }
+                    ]
+                },
+                
+             "costado-santuario-dch": {
+                    "title": "Costado Derecho",
+                    "hfov": 300,
+                    "yaw": 0,
+                    "pitch": 15,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/4.jpg",
+                     "hotSpots":[
+                         {
+                             "pitch": -86,
+                            "yaw": 12,
+                            "type": "info",
+                            "text": "Pozo en desuso" 
+                         },
+                       {
+                         "pitch": -5,
+                         "yaw": -45,
+                         "type": "scene",
+                          "text": "Frente",
+                          "sceneId": "frente-santuario",
+                          "targetyaw":0,
+                          "targetpitch":9
+                         },
+                         
+                         {
+                          "pitch": -15,
+                         "yaw": 0,
+                         "type": "scene",
+                          "text": "Interior",
+                          "sceneId": "nave-central",
+                          "targetyaw":180,
+                          "targetpitch":0
+                         },
+                         
+                    {
+                         "pitch": -5,
+                         "yaw": 47,
+                         "type": "scene",
+                          "text": "Contrafrente",
+                          "sceneId": "contrafrente",
+                          "targetyaw":0,
+                          "targetpitch":-13
+                      },
+                         
+                 {
+                         "pitch": -5,
+                         "yaw": -109,
+                         "type": "scene",
+                          "text": "Ermita",
+                          "sceneId": "ermita",
+                          "targetyaw": -20,
+                          "targetpitch":-5
+                         }
+                    ]
+                 },
+                
+                "ermita": {
+                    "title": "Ermita",
+                    "hfov": 300,
+                    "yaw": -20,
+                    "pitch": 0,
+                    "type": "equirectangular",
+                    "horizonRoll":0,
+                    "panorama": "/images/metrenco/6.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -8,
+                            "yaw": -79,
+                            "type": "scene",
+                            "text": "Frente",
+                            "sceneId": "frente-santuario",
+                            "targetYaw": 0,
+                            "targetPitch": 9
+                        },
+                        {
+                            "pitch": -10,
+                            "yaw": -37,
+                            "type": "scene",
+                            "text": "Costado Derecho",
+                            "sceneId": "costado-santuario-dch",
+                            "targetYaw": 0,
+                            "targetPitch": 15
+                        }
+                     ]
+               },
+                
+                "base": {
+                    "title": "Base de la Torre",
+                    "hfov": 300,
+                    "yaw": 0,
+                    "pitch": 0,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/22.jpg",
+                     "hotSpots":[
+                         {
+                             "pitch": -20,
+                            "yaw": 0,
+                            "type": "info",
+                            "text": "Virgen del Tránsito"
+                         },
+                         {
+                            "pitch": 5,
+                            "yaw": -180,
+                            "type": "scene",
+                            "text": "Ábside",
+                            "sceneId": "abside",
+                            "targetYaw": 0,
+                            "targetPitch": 15 
+                         },
+                         {
+                            "pitch": -20,
+                            "yaw": -180,
+                            "type": "scene",
+                            "text": "Nave Central",
+                            "sceneId": "nave-central",
+                            "targetYaw": 180,
+                            "targetPitch":0 
+                         },
+                         {
+                          "pitch": 0,
+                            "yaw": -128,
+                            "type": "scene",
+                            "text": "Costado Derecho",
+                            "sceneId": "costado-santuario-dch",
+                            "targetYaw": 0,
+                            "targetPitch": 15   
+                         },
+                       {
+                         "pitch": 0,
+                         "yaw": 126,
+                         "type": "scene",
+                          "text": "Costado Izquierdo",
+                          "sceneId": "costado-santuario-izq",
+                          "targetyaw":0,
+                          "targetpitch":3
+                         }
+                      ]
+            },
+                
+                "contrafrente": {
+                    "title": "Contrafrente",
+                    "hfov": 300,
+                    "yaw": 0,
+                    "pitch": -13,
+                    "type": "equirectangular",
+                    "panorama": "/images/metrenco/5.jpg",
+                     "hotSpots":[
+                       {
+                         "pitch": -15,
+                         "yaw": 40,
+                         "type": "scene",
+                          "text": "Costado Izquierdo",
+                          "sceneId": "costado-santuario-izq",
+                          "targetyaw":0,
+                          "targetpitch":3
+                         },
+                        {
+                          "pitch": -5,
+                         "yaw": 85,
+                         "type": "scene",
+                          "text": "Campanario",
+                          "sceneId": "campanario",
+                          "targetyaw":0,
+                          "targetpitch":0  
+                        },
+                         
+                         {
+                         "pitch": -20,
+                         "yaw": -40,
+                         "type": "scene",
+                          "text": "Costado Derecho",
+                          "sceneId": "costado-santuario-dch",
+                          "targetyaw":0,
+                          "targetpitch":3
+                         }
+                    ]
+                },
+                
+            }
+        });
+
+    </script>
+</body>
+
 </html>
